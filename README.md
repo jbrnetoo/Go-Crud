@@ -9,3 +9,6 @@ Criando uma CRUD API em GO
 
 ### Comando para rodar o container do Postgres:
 - docker run --name postgres-db -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+
+## Comando para rodar o programa:
+- CompileDaemon -command="./go-crud"

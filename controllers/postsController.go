@@ -7,6 +7,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Endpoint para inserir Posts
+// @Summary Inseri um novo post na base
+// @Description Inseri um novo post na base de dados
+// @Accept json
+// @Produce json
+// @Success 200 {integer} integer
+// @Router /posts [post]
 func PostsCreate(c *gin.Context) {
 	var body struct {
 		Body  string
@@ -39,6 +46,13 @@ func PostsCreate(c *gin.Context) {
 	})
 }
 
+// Endpoint para obter todos os posts
+// @Summary Consulta todos os post na base
+// @Description Consulta todos os post na base de dados
+// @Accept json
+// @Produce json
+// @Success 200 {integer} integer
+// @Router /posts [get]
 func PostsIndex(c *gin.Context) {
 	// pega todos os posts da base
 	var posts []models.Post
@@ -50,6 +64,14 @@ func PostsIndex(c *gin.Context) {
 	})
 }
 
+// Endpoint para obter post por ID
+// @Summary Consulta post pelo ID na base
+// @Description Consulta post pelo ID na base
+// @Accept json
+// @Produce json
+// @Param id query int true "Número 1"
+// @Success 200 {integer} integer
+// @Router /posts:id [get]
 func PostsShow(c *gin.Context) {
 	// obtem parâmetro da rota
 	id := c.Param("id")
